@@ -24,84 +24,38 @@
             <p class="hero-label">simple job search</p>
             <h1>less noise.<br>more jobs.</h1>
             <div class="search-container">
-                <input type="text" placeholder="what are you looking for?">
-                <button>find</button>
+                <input type="text" id="search-input" placeholder="what are you looking for?">
+                <button id="search-btn">find</button>
             </div>
         </section>
 
         <section class="jobs-section">
             <div class="section-title">
                 <h2>open positions</h2>
-                <span class="count">24 new today</span>
+                <span class="count" id="job-count"></span>
             </div>
 
-            <div class="jobs-list">
-                <a href="#" class="job-row">
-                    <div class="job-main">
-                        <span class="job-title">Product Designer</span>
-                        <span class="job-company">Notion</span>
-                    </div>
-                    <div class="job-meta">
-                        <span class="job-location">Remote</span>
-                        <span class="job-type">Full-time</span>
-                    </div>
-                </a>
-
-                <a href="#" class="job-row">
-                    <div class="job-main">
-                        <span class="job-title">Frontend Engineer</span>
-                        <span class="job-company">Linear</span>
-                    </div>
-                    <div class="job-meta">
-                        <span class="job-location">San Francisco</span>
-                        <span class="job-type">Full-time</span>
-                    </div>
-                </a>
-
-                <a href="#" class="job-row">
-                    <div class="job-main">
-                        <span class="job-title">Data Analyst</span>
-                        <span class="job-company">Stripe</span>
-                    </div>
-                    <div class="job-meta">
-                        <span class="job-location">New York</span>
-                        <span class="job-type">Hybrid</span>
-                    </div>
-                </a>
-
-                <a href="#" class="job-row">
-                    <div class="job-main">
-                        <span class="job-title">Marketing Lead</span>
-                        <span class="job-company">Figma</span>
-                    </div>
-                    <div class="job-meta">
-                        <span class="job-location">Remote</span>
-                        <span class="job-type">Full-time</span>
-                    </div>
-                </a>
-
-                <a href="#" class="job-row">
-                    <div class="job-main">
-                        <span class="job-title">Backend Developer</span>
-                        <span class="job-company">Vercel</span>
-                    </div>
-                    <div class="job-meta">
-                        <span class="job-location">Remote</span>
-                        <span class="job-type">Contract</span>
-                    </div>
-                </a>
-
-                <a href="#" class="job-row">
-                    <div class="job-main">
-                        <span class="job-title">UX Researcher</span>
-                        <span class="job-company">Airbnb</span>
-                    </div>
-                    <div class="job-meta">
-                        <span class="job-location">Seattle</span>
-                        <span class="job-type">Full-time</span>
-                    </div>
-                </a>
+            <div class="post-job-form" id="post-job-form">
+                <input type="text" id="form-title" placeholder="job title">
+                <input type="text" id="form-company" placeholder="company">
+                <input type="text" id="form-location" placeholder="location">
+                <select id="form-type">
+                    <option value="">type</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Remote">Remote</option>
+                </select>
+                <div class="form-actions">
+                    <button id="form-submit">post job</button>
+                    <button id="form-cancel">cancel</button>
+                </div>
             </div>
+
+            <div class="jobs-list" id="jobs-list"></div>
+
+            <p class="no-results" id="no-results">no jobs found.</p>
 
             <a href="#" class="view-more">view all positions →</a>
         </section>
@@ -124,7 +78,7 @@
             <div class="cta-content">
                 <h2>hiring?</h2>
                 <p>reach thousands of candidates. no clutter.</p>
-                <a href="#" class="cta-button">post a job</a>
+                <a href="#" class="cta-button" id="cta-post">post a job</a>
             </div>
         </section>
     </main>
@@ -141,6 +95,7 @@
             <a href="#">contact</a>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
